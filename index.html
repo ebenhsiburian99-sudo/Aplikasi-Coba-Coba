@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Web Saya</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 480px; /* Lebar maksimal seukuran HP */
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header {
+    background-color: #6200ee;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #03dac6;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+button:active {
+    transform: scale(0.95);
+}
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>My Mini App</h1>
+        </header>
+        
+        <main>
+            <p id="greeting">Halo! Selamat datang di aplikasi web kamu.</p>
+            <input type="text" id="nameInput" placeholder="Masukkan namamu...">
+            <button onclick="updateGreeting()">Klik Saya</button>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Developer Mode</p>
+        </footer>
+    </div>
+<script>
+  function updateGreeting() {
+    const name = document.getElementById('nameInput').value;
+    const display = document.getElementById('greeting');
+    
+    if (name) {
+        display.innerText = `Halo, ${name}! Aplikasi ini berjalan di browser Android-mu.`;
+    } else {
+        display.innerText = "Tolong masukkan nama dulu ya!";
+    }
+}
+  </script>
+</body>
+</html>
